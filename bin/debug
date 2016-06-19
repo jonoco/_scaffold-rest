@@ -1,1 +1,1 @@
-source ./bin/key ; DEBUG=app:* MODE=dev nodemon server 
+source ./bin/key ; DEBUG=app:* nodemon server 

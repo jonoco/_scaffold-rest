@@ -1,9 +1,8 @@
-const passport       = require('passport');
-const db             = require('../db');
-const debug 				 = require('debug')('app:passport');
-const { Strategy }   = require('passport-jwt');
-const { ExtractJwt } = require('passport-jwt');
-const LocalStrategy  = require('passport-local');
+const passport                 = require('passport');
+const db                       = require('../db');
+const debug 				           = require('debug')('app:passport');
+const { Strategy, ExtractJwt } = require('passport-jwt');
+const LocalStrategy            = require('passport-local');
 
 const KEY = process.env.KEY;
 
@@ -39,7 +38,7 @@ const jwtOptions = {
 // create JWT strategy
 // payload: sub and iat of jwt
 // done: callback for completion
-const jwtLogin = new Strategy(jwtOptions, function(payload, done) {
+const jwtLogin = new Strategy(jwtOptions, (payload, done) => {
 	// see if user id in the payload exists in our database
 	// if it does, call done with that object
 	// if not, call done without a user object

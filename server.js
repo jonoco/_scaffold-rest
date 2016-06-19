@@ -11,7 +11,7 @@ const app = express();
 const PORT = process.env.PORT || 3090;
 const MODE = process.env.MODE;
 
-app.use(morgan(MODE === 'dev' ? 'dev' : 'combined'));
+app.use(morgan('dev'));
 app.use(cors());
 app.use(bodyParser.json({ type: '*/*' }));
 app.use('/api', router);

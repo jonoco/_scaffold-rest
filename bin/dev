@@ -1,1 +1,1 @@
-source ./bin/key ; MODE=dev nodemon server
+source ./bin/key ; nodemon server
